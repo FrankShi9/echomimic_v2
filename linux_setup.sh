@@ -52,7 +52,7 @@ fi
 
 if [ ! -d "pretrained_weights" ]; then
     echo "Cloning pretrained weights repository..."
-    git clone https://huggingface.co/BadToBest/EchoMimicV2 pretrained_weights
+    git clone https://hf-mirror.com/BadToBest/EchoMimicV2 pretrained_weights
 else
     echo "Pretrained weights directory already exists. Skipping clone."
 fi
@@ -61,14 +61,14 @@ fi
 echo "Verifying additional repositories..."
 verify_dir "./pretrained_weights/sd-vae-ft-mse"
 if [ -z "$(ls -A ./pretrained_weights/sd-vae-ft-mse)" ]; then
-    git clone https://huggingface.co/stabilityai/sd-vae-ft-mse ./pretrained_weights/sd-vae-ft-mse
+    git clone https://hf-mirror.com/stabilityai/sd-vae-ft-mse ./pretrained_weights/sd-vae-ft-mse
 else
     echo "sd-vae-ft-mse repository already exists. Skipping clone."
 fi
 
 verify_dir "./pretrained_weights/sd-image-variations-diffusers"
 if [ -z "$(ls -A ./pretrained_weights/sd-image-variations-diffusers)" ]; then
-    git clone https://huggingface.co/lambdalabs/sd-image-variations-diffusers ./pretrained_weights/sd-image-variations-diffusers
+    git clone https://hf-mirror.com/lambdalabs/sd-image-variations-diffusers ./pretrained_weights/sd-image-variations-diffusers
 else
     echo "sd-image-variations-diffusers repository already exists. Skipping clone."
 fi
