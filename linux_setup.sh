@@ -59,14 +59,14 @@ fi
 
 # Clone additional repositories
 echo "Verifying additional repositories..."
-verify_dir "./pretrained_weights/sd-vae-ft-mse"
+# verify_dir "./pretrained_weights/sd-vae-ft-mse"
 if [ -z "$(ls -A ./pretrained_weights/sd-vae-ft-mse)" ]; then
     git clone https://hf-mirror.com/stabilityai/sd-vae-ft-mse ./pretrained_weights/sd-vae-ft-mse
 else
     echo "sd-vae-ft-mse repository already exists. Skipping clone."
 fi
 
-verify_dir "./pretrained_weights/sd-image-variations-diffusers"
+# verify_dir "./pretrained_weights/sd-image-variations-diffusers"
 if [ -z "$(ls -A ./pretrained_weights/sd-image-variations-diffusers)" ]; then
     git clone https://hf-mirror.com/lambdalabs/sd-image-variations-diffusers ./pretrained_weights/sd-image-variations-diffusers
 else
@@ -75,10 +75,10 @@ fi
 
 # Verify required model files in pretrained_weights
 echo "Checking required model files in pretrained_weights..."
-verify_file "./pretrained_weights/denoising_unet.pth"
-verify_file "./pretrained_weights/reference_unet.pth"
-verify_file "./pretrained_weights/motion_module.pth"
-verify_file "./pretrained_weights/pose_encoder.pth"
+#verify_file "./pretrained_weights/denoising_unet.pth"
+#verify_file "./pretrained_weights/reference_unet.pth"
+#verify_file "./pretrained_weights/motion_module.pth"
+#verify_file "./pretrained_weights/pose_encoder.pth"
 
 # Set up audio processor inside pretrained_weights and download tiny.pt
 AUDIO_PROCESSOR_DIR="./pretrained_weights/audio_processor"
